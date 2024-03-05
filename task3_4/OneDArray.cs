@@ -7,15 +7,14 @@ using System.Threading.Tasks;
 
 namespace task3_4
 {
-    internal class OneDArray<T> : BaseArray
+    internal class OneDArray<T>: BaseArray<T>
     {
         private T[] _array;
-        private int _size;
 
         public OneDArray(int size, bool isUser = false)
         {
-            _size = size;
-            _array = new T[_size];
+           
+            _array = new T[size];
 
             if (!isUser)
             {
@@ -27,35 +26,36 @@ namespace task3_4
             }
         }
 
+
+        public override void GetRandomValues()
+        {
+            if (typeof(T) == typeof(int))
+            {
+                RandomBool randomBool = new RandomBool();
+                randomBool.GetRandomBoolArray(_array.Length);
+            }
+            else if (typeof(T) == typeof(string))
+            {
+                RandomString randomString = new RandomString();
+                randomString.GetRandomStringArray(_array.Length);
+            }
+        } 
+
         public override double AverageValue()
         {
             throw new NotImplementedException();
         }
 
-        public void GetIntValues<T>()
+        public override void GetIntValues()
         {
-                //Console.WriteLine("введите " + _size + " элементов ");
-                //for (int i = 0; i < _array.Length; i++)
-                //{
-                //    Console.WriteLine($"элемент № {i}");
-                //    //_array[i] = int.Parse(Console.ReadLine());
-                //    _array[i] = Console.ReadLine();
-                //}
-        }
-
-
-        public override void GetRandomValues()
-        {
-            Random random = new Random();
-            for (int i = 0; i < _size; i++)
-            {
-               //_array[i] = random.Next(0, 255);
-            }
+            throw new NotImplementedException();
         }
 
         public override void Print()
         {
             throw new NotImplementedException();
         }
+
+
     }
 }

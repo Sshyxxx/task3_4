@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace task3_4
 {
-    internal interface IArray
+    internal interface IArray<T>
     {
         void GetIntValues();
 

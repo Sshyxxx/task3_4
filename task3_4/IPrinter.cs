@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace task3_4
 {
-    internal interface IPrinter
+    internal interface IPrinter<T>
     {
         void Print();
     }

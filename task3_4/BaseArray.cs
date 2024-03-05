@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace task3_4
 {
-    internal abstract class BaseArray : IArray, IPrinter
+    internal abstract class BaseArray<T> : IArray<T>, IPrinter<T>
     {
         /// <summary>
         /// Заполнение массива целыми числами

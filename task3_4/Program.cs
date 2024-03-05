@@ -6,7 +6,12 @@ namespace task3_4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            OneDArray<int> oneInt = new OneDArray<int>(5);
+            OneDArray<double> twoDouble = new OneDArray<double>(5);
+            OneDArray<bool> threeBool = new OneDArray<bool>(5);
+            OneDArray<string> fourString = new OneDArray<string>(5);
+
+
         }
     }
 }
