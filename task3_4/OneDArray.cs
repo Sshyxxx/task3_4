@@ -11,9 +11,16 @@ namespace task3_4
     {
         private T[] _array;
 
+        public T[] Array { 
+            set {
+                _array = value;
+            } 
+        }
+
+        public int Length {  get { return _array.Length; } }
+
         public OneDArray(int size, bool isUser = false)
         {
-           
             _array = new T[size];
 
             if (!isUser)
@@ -22,38 +29,55 @@ namespace task3_4
             }
             else
             {
-                //GetIntValues();
+                GetValues();
             }
         }
 
 
-        public override void GetRandomValues()
+        public override int[] GetRandomValues()
         {
-            if (typeof(T) == typeof(int))
+            Random random = new Random();
+            int[] int_array = new int[_array.Length];
+            for (int i = 0; i < _array.Length; i++)
             {
-                RandomBool randomBool = new RandomBool();
-                randomBool.GetRandomBoolArray(_array.Length);
+                int_array[i] = random.Next(0, 255);
             }
-            else if (typeof(T) == typeof(string))
-            {
-                RandomString randomString = new RandomString();
-                randomString.GetRandomStringArray(_array.Length);
-            }
-        } 
+            return int_array;
+        }
+        
+        //public bool[] NewRandomValues()
+        //{
+        //    return RandomBool.GetRandomBoolArray(_array.Length);
+        //}
 
         public override double AverageValue()
         {
             throw new NotImplementedException();
         }
 
-        public override void GetIntValues()
+        public override void GetValues()
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < _array.Length; i++)
+            {
+                Console.WriteLine($"элемент № {i}");
+                if (typeof(T) == typeof(int))
+                    _array[i] = (T)(object)int.Parse(Console.ReadLine());
+                else if (typeof(T) == typeof(double))
+                    _array[i] = (T)(object)double.Parse(Console.ReadLine());
+                else if (typeof(T) == typeof(bool))
+                    _array[i] = (T)(object)bool.Parse(Console.ReadLine());
+                else
+                    _array[i] = (T)(object)Console.ReadLine();
+
+            }
         }
 
         public override void Print()
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < _array.Length; i++)
+            {
+                Console.WriteLine(_array[i]);
+            }
         }
 
 

@@ -8,14 +8,11 @@ namespace task3_4
 {
     internal class RandomString
     {
-        Random r;
 
-        internal RandomString()
+        public static string[] GetRandomStringArray(int size)
         {
-            r = new Random();
-        }
-        public string[] GetRandomStringArray(int size)
-        {
+            Random r = new Random();
+
             string[] rand_array = new string[size];
             for (int i = 0; i < size; i++)
             {

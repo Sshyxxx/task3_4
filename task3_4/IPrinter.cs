@@ -8,6 +8,9 @@ namespace task3_4
 {
     internal interface IPrinter<T>
     {
+        /// <summary>
+        /// Выводит на экран массив
+        /// </summary>    
         void Print();
     }
 }

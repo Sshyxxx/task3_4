@@ -11,13 +11,13 @@ namespace task3_4
         /// <summary>
         /// Заполнение массива целыми числами
         /// </summary>     
-        public abstract void GetIntValues();
+        public abstract void GetValues();
 
 
         /// <summary>
         /// Заполнение массива случайными числами
         /// </summary>     
-        public abstract void GetRandomValues();
+        public abstract int[] GetRandomValues();
 
         /// <summary>
         /// Выводит на экран массив

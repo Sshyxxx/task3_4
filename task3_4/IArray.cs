@@ -8,12 +8,10 @@ namespace task3_4
 {
     internal interface IArray<T>
     {
-        void GetIntValues();
+        void GetValues();
 
-        void GetRandomValues();
+        int[] GetRandomValues();
 
         double AverageValue();
-
-        void Print();
     }
 }
