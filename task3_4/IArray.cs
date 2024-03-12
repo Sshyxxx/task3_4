@@ -8,7 +8,7 @@ namespace task3_4
 {
     internal interface IArray<T>
     {
-        void GetValues();
+        void GetValues(GenType genType);
 
         int[] GetRandomValues();
 

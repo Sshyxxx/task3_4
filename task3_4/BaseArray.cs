@@ -11,7 +11,7 @@ namespace task3_4
         /// <summary>
         /// Заполнение массива целыми числами
         /// </summary>     
-        public abstract void GetValues();
+        public abstract void GetValues(GenType genType);
 
 
         /// <summary>

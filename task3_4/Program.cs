@@ -31,6 +31,7 @@ namespace task3_4
             fourString = new OneDArray<string>(5, true);
             fourString.Print();
 
+            
 
         }
     }
